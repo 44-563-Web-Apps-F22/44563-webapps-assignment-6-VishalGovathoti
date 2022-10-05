@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Discount Offer</title>
+    
+</head>
+
+<body>
+
+        <h1>Vishal Govathoti computes discount</h1>
+        <h2>Getting input</h2>
+            
+              
+                    <label for="startingprice">Enter base amount </label>
+                    <input type="number" id="startingprice" name="startingprice" value=20> <br>
+               
+               
+                    <label for="discountprice">Enter the discount percentage</label>
+                    <input type="number" id="discountprice" name="discountprice" value=10> <br>
+               
+                <input type="button" class="btn btn-warning" onclick="discount()" value="Apply discount">
+            
+
+            <p id="result">This text will be replaced </p>
+
+        
+        <br>
+       
+               
+                    <input type="radio" id="number1" name="calculation" onclick="chooseOp()" value="times">
+                    <label for="number1">*</label> <br>
+              
+                
+                    <input type="radio" id="number2" name="calculation" onclick="chooseOp()" value="divide">
+                    <label for="number2">/</label> <br>
+               
+
+                <input type="radio" id="number3" name="calculation" onclick="chooseOp()" value="exponent">
+                <label for="number3">**</label> <br>
+           
+
+
+
+            <p id="result1">This text will be replaced </p>
+    
+    <script>
+
+        function discount() {
+            let startingprice = document.getElementById("startingprice").value;
+            let discountprice = document.getElementById("discountprice").value;
+            let result = "";
+            for (let i = 1; i < 6; i++) {
+                let discount = (startingprice * i) - ((startingprice * i) * discountprice / 100);
+                result = result + " " + discount;
+
+            }
+            document.getElementById("result").innerHTML = "Discounted amounts for base " + startingprice + " are " + result;
+
+        }
+
+        function chooseOp() {
+            let starting = document.getElementById("startingprice").value;
+            let discount = document.getElementById("discountprice").value;
+            let times = document.getElementById("number1").checked;
+            let divide = document.getElementById("number2").checked;
+            let exponent = document.getElementById("number3").checked;
+            let results = 0;
+            if (times) {
+                results = starting * discount;
+            }
+            else if (divide) {
+                results = starting / discount;
+            }
+            else if (exponent) {
+                results = starting ** discount
+            }
+            document.getElementById("result1").innerHTML = results
+
+        }
+    </script>
+
+</body>
+
+</html>
