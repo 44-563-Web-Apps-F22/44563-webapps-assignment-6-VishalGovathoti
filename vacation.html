@@ -2,32 +2,47 @@
 <html>
 <head>
     <title>TRIP</title>
-</head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
 <body>
+    <div class="container p-3 my-3 bg-danger text-white">
 <h1>Vishal Govathoti selects a vacation</h1>
 <h2>Getting input</h2>
 
 <form>
+    <div class="btn-group btn-group-justified">
    
     <input type="checkbox" id="first" name="TRIP" value="true">
     <label for="first">Travel by Air</label> <br>
- 
+    </div>
+
+    <div class="btn-group btn-group-justified">
     <input type="checkbox" id="second" name="TRIP" value="true">
     <label for="second">Domestic</label> <br>
+    </div>
 
+<div class="btn-group btn-group-justified">
     <input type="checkbox" id="third" name="TRIP" value="false">
     <label for="third">Resort</label> <br>
+    </div>
+
 
     <input type="button" class="btn btn-warning" value="Select a vacation" onclick="selectVacation()">
 
 </form>
 <br>
 <form>
+    <div class="btn-group btn-group-justified">
     <label for="place">Enter a city</label>
     <input type="text" id="place" name="place" value="city"> <br>
-    
+    </div>
+    <div class="btn-group btn-group-justified">
     <label for="location">Enter price</label>
     <input type="location" id="location" name="location"> <br>
+    </div>
 
     <input type="button" class="btn btn-success" value="Update the vacation" onclick="updateVacation()">
 </form>
